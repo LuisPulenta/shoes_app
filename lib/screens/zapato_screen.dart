@@ -7,7 +7,7 @@ class ZapatoScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    camabiarStatusDark();
+    cambiarStatusDark();
     return Scaffold(
       body: Column(
         children: [

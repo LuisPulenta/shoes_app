@@ -10,7 +10,7 @@ class ZapatoDescScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    camabiarStatusLight();
+    cambiarStatusLight();
     return Scaffold(
         body: Column(
       children: [
@@ -26,7 +26,7 @@ class ZapatoDescScreen extends StatelessWidget {
                 child: FloatingActionButton(
                   onPressed: () {
                     Navigator.pop(context);
-                    camabiarStatusDark();
+                    cambiarStatusDark();
                   },
                   elevation: 0,
                   highlightElevation: 0,
