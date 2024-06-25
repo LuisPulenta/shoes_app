@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:shoes_app/screens/models/zapato_model.dart';
+import 'package:shoes_app/models/zapato_model.dart';
 import 'package:shoes_app/screens/zapato_desc_screen.dart';
 
 class ZapatoSize extends StatelessWidget {
@@ -55,7 +55,7 @@ class _ZapatoConSombra extends StatelessWidget {
   Widget build(BuildContext context) {
     final zapatoModel = Provider.of<ZapatoModel>(context);
     return Padding(
-      padding: EdgeInsets.all(50),
+      padding: const EdgeInsets.all(50),
       child: Stack(
         children: [
           const Positioned(

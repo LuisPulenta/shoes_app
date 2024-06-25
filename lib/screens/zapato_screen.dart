@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shoes_app/screens/helpers/helpers.dart';
+import 'package:shoes_app/helpers/helpers.dart';
 import 'package:shoes_app/widgets/widgets.dart';
 
 class ZapatoScreen extends StatelessWidget {

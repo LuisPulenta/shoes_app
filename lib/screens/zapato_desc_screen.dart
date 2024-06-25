@@ -1,8 +1,8 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:shoes_app/screens/helpers/helpers.dart';
-import 'package:shoes_app/screens/models/zapato_model.dart';
+import 'package:shoes_app/helpers/helpers.dart';
+import 'package:shoes_app/models/zapato_model.dart';
 import 'package:shoes_app/widgets/widgets.dart';
 
 class ZapatoDescScreen extends StatelessWidget {
@@ -75,7 +75,7 @@ class _BotonesLikeCartSettings extends StatelessWidget {
         children: [
           const _BotonSombreado(
             icon: Icon(
-              Icons.star,
+              Icons.favorite,
               color: Colors.red,
               size: 25,
             ),
@@ -83,14 +83,14 @@ class _BotonesLikeCartSettings extends StatelessWidget {
           _BotonSombreado(
             icon: Icon(
               Icons.add_shopping_cart,
-              color: Colors.grey.withOpacity(0.4),
+              color: Colors.grey.withOpacity(0.6),
               size: 25,
             ),
           ),
           _BotonSombreado(
             icon: Icon(
-              Icons.settings,
-              color: Colors.grey.withOpacity(0.4),
+              Icons.share,
+              color: Colors.grey.withOpacity(0.6),
               size: 25,
             ),
           ),
@@ -188,8 +188,8 @@ class _BotonColor extends StatelessWidget {
   Widget build(BuildContext context) {
     final zapatoModel = Provider.of<ZapatoModel>(context);
     return FadeInLeft(
-      delay: Duration(milliseconds: index * 100),
-      duration: Duration(milliseconds: 300),
+      delay: Duration(milliseconds: 400 - index * 100),
+      duration: const Duration(milliseconds: 300),
       child: GestureDetector(
         onTap: () {
           zapatoModel.assetImage = urlImagen;
@@ -226,8 +226,8 @@ class _MontoBuyNow extends StatelessWidget {
             ),
             const Spacer(),
             Bounce(
-              delay: Duration(seconds: 1),
-              from: 8,
+              delay: const Duration(milliseconds: 300),
+              from: 18,
               child: const BotonNaranja(
                 texto: "Buy now",
                 ancho: 120,
