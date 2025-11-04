@@ -6,13 +6,13 @@ class BotonNaranja extends StatelessWidget {
   final double ancho;
   final Color color;
 
-  const BotonNaranja(
-      {Key? key,
-      required this.texto,
-      this.alto = 50,
-      this.ancho = 150,
-      this.color = Colors.orange})
-      : super(key: key);
+  const BotonNaranja({
+    super.key,
+    required this.texto,
+    this.alto = 50,
+    this.ancho = 150,
+    this.color = Colors.orange,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -24,10 +24,7 @@ class BotonNaranja extends StatelessWidget {
         color: color,
         borderRadius: BorderRadius.circular(100),
       ),
-      child: Text(
-        texto,
-        style: const TextStyle(color: Colors.white),
-      ),
+      child: Text(texto, style: const TextStyle(color: Colors.white)),
     );
   }
 }

@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:shoes_app/models/zapato_model.dart';
-import 'package:shoes_app/screens/zapato_desc_screen.dart';
+
+import '../models/zapato_model.dart';
+import '../screens/zapato_desc_screen.dart';
 
 class ZapatoSize extends StatelessWidget {
   final bool fullScreen;
-  const ZapatoSize({Key? key, this.fullScreen = false}) : super(key: key);
+  const ZapatoSize({super.key, this.fullScreen = false});
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +23,9 @@ class ZapatoSize extends StatelessWidget {
       },
       child: Padding(
         padding: EdgeInsets.symmetric(
-            horizontal: fullScreen ? 5 : 30, vertical: fullScreen ? 5 : 0),
+          horizontal: fullScreen ? 5 : 30,
+          vertical: fullScreen ? 5 : 0,
+        ),
         child: Container(
           width: double.infinity,
           height: fullScreen ? 410 : 430,
@@ -37,12 +40,14 @@ class ZapatoSize extends StatelessWidget {
                     topRight: Radius.circular(30),
                   ),
           ),
-          child: Column(children: [
-            //Zapato con su sombra]
-            _ZapatoConSombra(),
-            //Talles del zapato
-            !fullScreen ? const _ZapatoTallas() : Container(),
-          ]),
+          child: Column(
+            children: [
+              //Zapato con su sombra]
+              _ZapatoConSombra(),
+              //Talles del zapato
+              !fullScreen ? const _ZapatoTallas() : Container(),
+            ],
+          ),
         ),
       ),
     );
@@ -58,14 +63,8 @@ class _ZapatoConSombra extends StatelessWidget {
       padding: const EdgeInsets.all(50),
       child: Stack(
         children: [
-          const Positioned(
-            bottom: 20,
-            right: 0,
-            child: _ZapatoSombra(),
-          ),
-          Image(
-            image: AssetImage(zapatoModel.assetImage),
-          ),
+          const Positioned(bottom: 20, right: 0, child: _ZapatoSombra()),
+          Image(image: AssetImage(zapatoModel.assetImage)),
         ],
       ),
     );
@@ -74,9 +73,7 @@ class _ZapatoConSombra extends StatelessWidget {
 
 //------------------ _ZapatoSombra -----------------------
 class _ZapatoSombra extends StatelessWidget {
-  const _ZapatoSombra({
-    Key? key,
-  }) : super(key: key);
+  const _ZapatoSombra({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -89,7 +86,7 @@ class _ZapatoSombra extends StatelessWidget {
           //color: Colors.red,
           borderRadius: BorderRadius.circular(100),
           boxShadow: const [
-            BoxShadow(color: Color(0xffeaa14e), blurRadius: 40)
+            BoxShadow(color: Color(0xffeaa14e), blurRadius: 40),
           ],
         ),
       ),
@@ -99,7 +96,7 @@ class _ZapatoSombra extends StatelessWidget {
 
 //------------------ _ZapatoTallas -----------------------
 class _ZapatoTallas extends StatelessWidget {
-  const _ZapatoTallas({Key? key}) : super(key: key);
+  const _ZapatoTallas({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -124,9 +121,7 @@ class _ZapatoTallas extends StatelessWidget {
 class _TallaZapatoCaja extends StatelessWidget {
   final double numero;
 
-  const _TallaZapatoCaja(
-    this.numero,
-  );
+  const _TallaZapatoCaja(this.numero);
 
   @override
   Widget build(BuildContext context) {
@@ -156,11 +151,12 @@ class _TallaZapatoCaja extends StatelessWidget {
         child: Text(
           numero.toString().replaceAll('.0', ''),
           style: TextStyle(
-              color: numero != zapatoModel.talla
-                  ? const Color(0xfff1a23a)
-                  : Colors.white,
-              fontSize: 16,
-              fontWeight: FontWeight.bold),
+            color: numero != zapatoModel.talla
+                ? const Color(0xfff1a23a)
+                : Colors.white,
+            fontSize: 16,
+            fontWeight: FontWeight.bold,
+          ),
         ),
       ),
     );

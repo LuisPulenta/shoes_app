@@ -1,26 +1,24 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:shoes_app/helpers/helpers.dart';
-import 'package:shoes_app/models/zapato_model.dart';
-import 'package:shoes_app/widgets/widgets.dart';
+
+import '../helpers/helpers.dart';
+import '../models/zapato_model.dart';
+import '../widgets/widgets.dart';
 
 class ZapatoDescScreen extends StatelessWidget {
-  const ZapatoDescScreen({Key? key}) : super(key: key);
+  const ZapatoDescScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     cambiarStatusLight();
     return Scaffold(
-        body: Column(
-      children: [
-        Stack(
-          children: [
-            const Hero(
-              tag: "zapato-1",
-              child: ZapatoSize(fullScreen: true),
-            ),
-            Positioned(
+      body: Column(
+        children: [
+          Stack(
+            children: [
+              const Hero(tag: 'zapato-1', child: ZapatoSize(fullScreen: true)),
+              Positioned(
                 left: 10,
                 top: 80,
                 child: FloatingActionButton(
@@ -36,34 +34,35 @@ class ZapatoDescScreen extends StatelessWidget {
                     color: Colors.white,
                     size: 60,
                   ),
-                ))
-          ],
-        ),
-        Expanded(
-            child: SingleChildScrollView(
-          child: Column(
-            children: const [
-              ZapatoDescripcion(
-                titulo: "Nike Air Max 720",
-                descripcion:
-                    "The Nike Air Max 720 goes bigger than ever before with Nike's taller Air unit yet, offering more air underfoot for unimaginable, all-day comfort. Has Air Max gone too far? We hope so.",
+                ),
               ),
-              _MontoBuyNow(),
-              _ColoresYMas(),
-              _BotonesLikeCartSettings(),
             ],
           ),
-        ))
-      ],
-    ));
+          Expanded(
+            child: SingleChildScrollView(
+              child: Column(
+                children: const [
+                  ZapatoDescripcion(
+                    titulo: 'Nike Air Max 720',
+                    descripcion:
+                        "The Nike Air Max 720 goes bigger than ever before with Nike's taller Air unit yet, offering more air underfoot for unimaginable, all-day comfort. Has Air Max gone too far? We hope so.",
+                  ),
+                  _MontoBuyNow(),
+                  _ColoresYMas(),
+                  _BotonesLikeCartSettings(),
+                ],
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
   }
 }
 
 //-------------------- _BotonesLikeCartSettings -------------------------
 class _BotonesLikeCartSettings extends StatelessWidget {
-  const _BotonesLikeCartSettings({
-    Key? key,
-  }) : super(key: key);
+  const _BotonesLikeCartSettings({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -74,11 +73,7 @@ class _BotonesLikeCartSettings extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           const _BotonSombreado(
-            icon: Icon(
-              Icons.favorite,
-              color: Colors.red,
-              size: 25,
-            ),
+            icon: Icon(Icons.favorite, color: Colors.red, size: 25),
           ),
           _BotonSombreado(
             icon: Icon(
@@ -103,10 +98,7 @@ class _BotonesLikeCartSettings extends StatelessWidget {
 //-------------------- _BotonSombreado ---------------------
 class _BotonSombreado extends StatelessWidget {
   final Icon icon;
-  const _BotonSombreado({
-    Key? key,
-    required this.icon,
-  }) : super(key: key);
+  const _BotonSombreado({super.key, required this.icon});
 
   @override
   Widget build(BuildContext context) {
@@ -123,7 +115,7 @@ class _BotonSombreado extends StatelessWidget {
             spreadRadius: -5,
             blurRadius: 20,
             offset: Offset(5, 5),
-          )
+          ),
         ],
       ),
       alignment: Alignment.center,
@@ -134,9 +126,7 @@ class _BotonSombreado extends StatelessWidget {
 
 //-------------------- _ColoresYMas -------------------------
 class _ColoresYMas extends StatelessWidget {
-  const _ColoresYMas({
-    Key? key,
-  }) : super(key: key);
+  const _ColoresYMas({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -148,23 +138,27 @@ class _ColoresYMas extends StatelessWidget {
             child: Stack(
               children: const [
                 Positioned(
-                    left: 90,
-                    child:
-                        _BotonColor(Color(0xff364d56), 4, 'assets/negro.png')),
+                  left: 90,
+                  child: _BotonColor(Color(0xff364d56), 4, 'assets/negro.png'),
+                ),
                 Positioned(
-                    left: 60,
-                    child:
-                        _BotonColor(Color(0xff2099f1), 3, 'assets/azul.png')),
+                  left: 60,
+                  child: _BotonColor(Color(0xff2099f1), 3, 'assets/azul.png'),
+                ),
                 Positioned(
-                    left: 30,
-                    child: _BotonColor(
-                        Color(0xffffad29), 2, 'assets/amarillo.png')),
+                  left: 30,
+                  child: _BotonColor(
+                    Color(0xffffad29),
+                    2,
+                    'assets/amarillo.png',
+                  ),
+                ),
                 _BotonColor(Color(0xffc6d642), 1, 'assets/verde.png'),
               ],
             ),
           ),
           const BotonNaranja(
-            texto: "More related items",
+            texto: 'More related items',
             alto: 30,
             ancho: 170,
             color: Color(0xffffc675),
@@ -206,35 +200,31 @@ class _BotonColor extends StatelessWidget {
 //-------------------- _MontoBuyNow -------------------------
 
 class _MontoBuyNow extends StatelessWidget {
-  const _MontoBuyNow({
-    Key? key,
-  }) : super(key: key);
+  const _MontoBuyNow({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-        margin: const EdgeInsets.only(top: 20, bottom: 20),
-        padding: const EdgeInsets.symmetric(horizontal: 30),
-        child: Row(
-          children: [
-            const Text(
-              '\$180.0',
-              style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 28,
-                  fontWeight: FontWeight.bold),
+      margin: const EdgeInsets.only(top: 20, bottom: 20),
+      padding: const EdgeInsets.symmetric(horizontal: 30),
+      child: Row(
+        children: [
+          const Text(
+            '\$180.0',
+            style: TextStyle(
+              color: Colors.black,
+              fontSize: 28,
+              fontWeight: FontWeight.bold,
             ),
-            const Spacer(),
-            Bounce(
-              delay: const Duration(milliseconds: 300),
-              from: 18,
-              child: const BotonNaranja(
-                texto: "Buy now",
-                ancho: 120,
-                alto: 40,
-              ),
-            ),
-          ],
-        ));
+          ),
+          const Spacer(),
+          Bounce(
+            delay: const Duration(milliseconds: 300),
+            from: 18,
+            child: const BotonNaranja(texto: 'Buy now', ancho: 120, alto: 40),
+          ),
+        ],
+      ),
+    );
   }
 }

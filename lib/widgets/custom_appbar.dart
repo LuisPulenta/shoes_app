@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class CustomAppBar extends StatelessWidget {
   final String texto;
 
-  const CustomAppBar({Key? key, required this.texto}) : super(key: key);
+  const CustomAppBar({super.key, required this.texto});
 
   @override
   Widget build(BuildContext context) {
@@ -20,15 +20,13 @@ class CustomAppBar extends StatelessWidget {
               Text(
                 texto,
                 style: const TextStyle(
-                    color: Colors.black,
-                    fontSize: 28,
-                    fontWeight: FontWeight.w700),
+                  color: Colors.black,
+                  fontSize: 28,
+                  fontWeight: FontWeight.w700,
+                ),
               ),
               const Spacer(),
-              const Icon(
-                Icons.search,
-                size: 30,
-              )
+              const Icon(Icons.search, size: 30),
             ],
           ),
         ),
