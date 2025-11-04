@@ -62,7 +62,7 @@ class ZapatoDescScreen extends StatelessWidget {
 
 //-------------------- _BotonesLikeCartSettings -------------------------
 class _BotonesLikeCartSettings extends StatelessWidget {
-  const _BotonesLikeCartSettings({super.key});
+  const _BotonesLikeCartSettings();
 
   @override
   Widget build(BuildContext context) {
@@ -98,7 +98,7 @@ class _BotonesLikeCartSettings extends StatelessWidget {
 //-------------------- _BotonSombreado ---------------------
 class _BotonSombreado extends StatelessWidget {
   final Icon icon;
-  const _BotonSombreado({super.key, required this.icon});
+  const _BotonSombreado({required this.icon});
 
   @override
   Widget build(BuildContext context) {
@@ -126,7 +126,7 @@ class _BotonSombreado extends StatelessWidget {
 
 //-------------------- _ColoresYMas -------------------------
 class _ColoresYMas extends StatelessWidget {
-  const _ColoresYMas({super.key});
+  const _ColoresYMas();
 
   @override
   Widget build(BuildContext context) {
@@ -200,7 +200,7 @@ class _BotonColor extends StatelessWidget {
 //-------------------- _MontoBuyNow -------------------------
 
 class _MontoBuyNow extends StatelessWidget {
-  const _MontoBuyNow({super.key});
+  const _MontoBuyNow();
 
   @override
   Widget build(BuildContext context) {

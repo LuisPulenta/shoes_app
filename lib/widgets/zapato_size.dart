@@ -73,7 +73,7 @@ class _ZapatoConSombra extends StatelessWidget {
 
 //------------------ _ZapatoSombra -----------------------
 class _ZapatoSombra extends StatelessWidget {
-  const _ZapatoSombra({super.key});
+  const _ZapatoSombra();
 
   @override
   Widget build(BuildContext context) {
@@ -96,7 +96,7 @@ class _ZapatoSombra extends StatelessWidget {
 
 //------------------ _ZapatoTallas -----------------------
 class _ZapatoTallas extends StatelessWidget {
-  const _ZapatoTallas({super.key});
+  const _ZapatoTallas();
 
   @override
   Widget build(BuildContext context) {
